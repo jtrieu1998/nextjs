@@ -51,7 +51,16 @@ class checkSplit extends React.Component {
   }
 
   splitFormula = (cost, i) => {
-    const dinerBill = (1+((this.state.tip + this.state.tax)/this.state.total)) * cost.target.value;
+    let tt = parseFloat(this.state.tip)+parseFloat(this.state.tax);
+    let percent = cost.target.value/this.state.total;
+    let cus = parseFloat(cost.target.value);
+
+    // console.log("total: " + this.state.total + " tax: " + this.state.tax + " tip: " + this.state.tip + "cust: " + cost.target.value);
+    // console.log("cost.target.value/this.state.total: " + cost.target.value/this.state.total);
+    // console.log("this.state.tip + this.state.tax: " + x);
+    // console.log(cost.target.value/this.state.total * x + cost.target.value);
+    // console.log(cost.target.value);
+    const dinerBill = (percent * tt ) + cus;
     // const cusP = 
     document.querySelector("#customer-" + (i+1)).innerText = dinerBill;
     // console.log("#customer-" + (i+1))
