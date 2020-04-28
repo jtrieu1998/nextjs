@@ -43,7 +43,7 @@ class checkSplit extends React.Component {
         inputs.push(
           <div key={i}>
             <input id={i+1} type="text" onChange={(value)=>this.splitFormula(value,i)} placeholder={"Diner " + (i+1)}/>
-            <p id={"customer-" + (i+1)}>this is poopy</p>
+            <p id={"customer-" + (i+1)}>0.0</p>
           </div>
         )
       }
