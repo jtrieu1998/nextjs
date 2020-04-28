@@ -7,6 +7,10 @@
     "build": "next build",
     "start": "next start"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jtrieu1998/nextjs.git"
+  },
   "dependencies": {
     "date-fns": "^2.11.1",
     "gray-matter": "^4.0.2",
