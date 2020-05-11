@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../../components/Layout';
 // import '../_apps.js';
+import Head from 'next/head';
 
 class checkSplit extends React.Component {
   constructor(props) {
@@ -42,7 +43,7 @@ class checkSplit extends React.Component {
       for(let i=0; i<value; i++){
         inputs.push(
           <div key={i}>
-            <input id={i+1} type="text" onChange={(value)=>this.splitFormula(value,i)} placeholder={"Diner " + (i+1)}/>
+            <input id={i+1} className="form-control mr-sm-2" type="text" onChange={(value)=>this.splitFormula(value,i)} placeholder={"Diner " + (i+1)}/>
             <p id={"customer-" + (i+1)}>0.0</p>
           </div>
         )
@@ -71,21 +72,26 @@ class checkSplit extends React.Component {
   render() {
     return (
       <Layout>
+        <Head>
+          <title>Check Splitter</title>
+          <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"/>
+        </Head> 
         <div>
         <h1>Check Splitting App</h1>
         </div>
-        <form>
-          <input type="number" name="quantity" min="0" max="99999" onChange={(value)=>this.setTotal(value)} placeholder="Total"/>
+        <form className="form-inline my-2 my-lg-0">
+          <input className="form-control mr-sm-2" type="number" name="quantity" min="0" max="99999" onChange={(value)=>this.setTotal(value)} placeholder="Total"/>
           <br/>
-          <input type="number" name="quantity" min="0" max="99999" onChange={(value)=>this.setTax(value)} placeholder="Tax"/>
+          <input className="form-control mr-sm-2" type="number" name="quantity" min="0" max="99999" onChange={(value)=>this.setTax(value)} placeholder="Tax"/>
           <br/>
-          <input type="number" name="quantity" min="0" max="99999" onChange={(value)=>this.setTip(value)} placeholder="Tip"/>
+          <input className="form-control mr-sm-2" type="number" name="quantity" min="0" max="99999" onChange={(value)=>this.setTip(value)} placeholder="Tip"/>
           <br/>
-          <input type="number" name="quantity" min="0" max="20" onChange={(value)=>this.setCustomers(value)} placeholder="Number of Diners"/>
-          <div>
+          <input className="form-control mr-sm-2" type="number" name="quantity" min="0" max="20" onChange={(value)=>this.setCustomers(value)} placeholder="Number of Diners"/>
+          <br></br>
+        </form>
+        <div>
             {this.renderInputs(this.state.customers)}     
           </div>
-        </form>
         
       </Layout>
     );
