@@ -6,6 +6,6 @@ import { photos } from "./photos";
 /* popout the browser and maximize to see more columns! -> */
 export default function gallery(){
   return(
-    <Gallery photos={photos} direction={"column"} />
+    <Gallery photos={photos} direction={"column"}/>
   );
 }
